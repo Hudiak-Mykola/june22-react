@@ -1,0 +1,16 @@
+.mainSimpson{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 5px;
+}
+.simpson{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

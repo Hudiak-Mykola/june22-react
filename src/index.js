@@ -2,11 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import HeaderRickiMorty from "./components/ricki&morty/js/headerRicki-Morty";
 import reportWebVitals from './reportWebVitals';
-
+import SimpsonsCard from "./components/simpsons/js/SimpsonsCard";
+import HeaderSimpson from "./components/simpsons/js/headerSimpson";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+      <HeaderSimpson/>
+      <SimpsonsCard/>
+      <HeaderRickiMorty />
     <App />
   </React.StrictMode>
 );
