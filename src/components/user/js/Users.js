@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import User from "./User";
 import UserInfo from "./User-info";
+import getUsers from "../../services/user.service";
 export default function Users (){
     let [users, setUsers] = useState([]);
     let [user, setUser] = useState(null);
@@ -9,8 +10,7 @@ export default function Users (){
     }
 
    useEffect(()=>{
-       fetch(`https://jsonplaceholder.typicode.com/users/`)
-           .then(value => value.json())
+      getUsers()
            .then(value => {
                setUsers(value)
            })
@@ -18,11 +18,11 @@ export default function Users (){
    },[ ])
 
     return(
-        <div>
-            <hr/>
+        <div className={'main'}>
+
             {user &&<UserInfo user={user}/>}
-            <hr/>
-            {users.map((user,index)=>(<User user={user} key={index} lift={lift}/>))}
+
+           <div className={'userMain'}> {users.map((user,index)=>(<User user={user} key={index} lift={lift}/>))}</div>
         </div>
     )
 }
