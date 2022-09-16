@@ -1,11 +1,12 @@
 
-import './App.css';
-import Users from "./components/user-nfo/Users";
+import './components/SpaceX/css/Style.css'
+
+import Launchs from "./components/SpaceX/js/Launchs";
 
 function App() {
   return (
     <div className="App">
-      <Users/>
+      <Launchs/>
     </div>
   );
 }
