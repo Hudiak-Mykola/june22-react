@@ -4,7 +4,7 @@ function User(props) {
     const {user} = props;
     return (
         <div>
-            {user.name} <br/> {user.email} <br/> {user.phone}
+            {user.id} {user.name} <br/> {user.email} <br/> {user.phone}
         </div>
     );
 }

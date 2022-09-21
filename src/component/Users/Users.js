@@ -17,7 +17,7 @@ function Users() {
 
     return(
         <div className={'mainDiv'}>
-            <UserForm/>
+            <UserForm setUsers={setUsers}/>
             <hr/>
             {users.map((user,id)=> (<User user={user} key={id}/>))}
         </div>

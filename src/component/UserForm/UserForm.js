@@ -4,12 +4,14 @@ import {userService} from "../../services";
 
 
 
-const UserForm = () => {
-    const {register, handleSubmit} = useForm()
+const UserForm = (props) => {
+    let {setUsers} = props;
+    const {register,reset, handleSubmit} = useForm()
 
     const submit = async (user) => {
          const {data} = await userService.create(user)
-        console.log(data)
+        setUsers(users=>[...users, data])
+        reset()
     };
     return (
         <form onSubmit={handleSubmit(submit)}>
