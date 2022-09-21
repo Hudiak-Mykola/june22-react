@@ -1,4 +1,4 @@
-export * from './Coments/Coments'
-export * from './Coment/Coment'
+export * from './Cars/Cars'
+export * from './Car/Car'
 export * from './CreateComent/CreatePost'
-export * from './ComentForm/ComentForm'
+export * from './CarForm/CarForm'

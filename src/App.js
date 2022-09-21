@@ -1,11 +1,11 @@
 
-import Coments from "./component/Coments/Coments";
+import Cars from "./component/Cars/Cars";
 
 
 function App() {
     return (
         <div className="App">
-            <Coments/>
+            <Cars/>
         </div>
     );
 }
