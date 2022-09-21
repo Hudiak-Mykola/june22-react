@@ -1,10 +1,9 @@
 import {useForm} from "react-hook-form";
+
 import {userService} from "../../services";
 
 
-
-
-const UserForm = () => {
+const ComentForm = () => {
     const {register, handleSubmit} = useForm()
 
     const submit = async (user) => {
@@ -13,12 +12,10 @@ const UserForm = () => {
     };
     return (
         <form onSubmit={handleSubmit(submit)}>
-            <input type="text" placeholder={'name'} {...register('name')}/>
-            <input type="text" placeholder={'email'} {...register('email')}/>
-            <input type="text" placeholder={'phone'} {...register('phone')}/>
+            <input type="text" placeholder={'comment'} {...register('comment')}/>
             <button>Save</button>
         </form>
     );
 };
 
-export default UserForm;
+export default ComentForm;

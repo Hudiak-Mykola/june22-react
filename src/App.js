@@ -1,10 +1,11 @@
-import Users from "./component/Users/Users";
+import Users from "./component/Coments/Coments";
+import Coments from "./component/Coments/Coments";
 
 
 function App() {
     return (
         <div className="App">
-            <Users/>
+            <Coments/>
         </div>
     );
 }
