@@ -1,13 +1,16 @@
 import {useForm} from "react-hook-form";
 
-import {userService} from "../../services";
+import {comentService} from "../../services";
 
 
-const ComentForm = () => {
+
+const ComentForm = (props) => {
+    let {setComents} = props;
     const {register, handleSubmit} = useForm()
 
     const submit = async (user) => {
-         const {data} = await userService.create(user)
+         const {data} = await comentService.create(user)
+        setComents(coments=>[...coments,data])
         console.log(data)
     };
     return (

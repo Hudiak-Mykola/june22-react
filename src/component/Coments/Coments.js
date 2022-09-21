@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-import {userService} from "../../services";
+import {comentService} from "../../services";
 import ComentForm from "../ComentForm/ComentForm";
 import Coment from "../Coment/Coment";
 
@@ -9,7 +9,7 @@ function Coments() {
     const [coments,setComents]=useState([])
 
     useEffect(()=>{
-        userService.getAll().then(value => {console.log(value.data)
+        comentService.getAll().then(value => {console.log(value.data)
             setComents(value.data)
         })
 
@@ -17,7 +17,7 @@ function Coments() {
 
     return(
         <div className={'mainDiv'}>
-            <ComentForm/>
+            <ComentForm setComents={setComents}/>
             <hr/>
             {coments.map((coment,id)=> (<Coment coment={coment} key={id}/>))}
         </div>
