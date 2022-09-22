@@ -2,6 +2,7 @@ import {carService} from "../../services";
 
 function Car({car,setCars}) {
     const {id,year,price, model} = car;
+
     const deleteCar = async () => {
       await carService.deleteById(id)
         setCars(cars=>{
@@ -15,7 +16,7 @@ function Car({car,setCars}) {
         <div>
           id: {id} <br/> price: {price} <br/>  year: {year} <br/>model: {model}
             <button onClick={()=>deleteCar( )}>delete</button>
-            <button>update</button>
+            <button >update</button>
 
         </div>
     );

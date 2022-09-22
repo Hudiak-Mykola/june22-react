@@ -6,11 +6,12 @@ import {carService} from "../../services";
 
 const CarForm = (props) => {
     let {setCars} = props;
-    const {register, handleSubmit} = useForm()
+    const {register, handleSubmit, reset} = useForm()
 
     const submit = async (user) => {
          const {data} = await carService.create(user)
         setCars(cars=>[...cars,data])
+        reset()
         console.log(data)
     };
     return (
