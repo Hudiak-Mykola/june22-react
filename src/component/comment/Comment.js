@@ -1,9 +1,16 @@
+import {Link, Outlet} from "react-router-dom";
 
 
 const Comment = ({comment}) => {
+
+    const {id} = comment
+
     return (
         <div>
-            {comment.id}  -  {comment.body}
+            <div>
+                <Link to={`posts/${id}`}>{comment.id}  -  {comment.body}</Link>
+
+            </div>
         </div>
     );
 };
