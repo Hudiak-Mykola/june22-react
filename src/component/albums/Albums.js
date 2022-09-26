@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 
 import {Service} from "../../services";
 import Album from "../album/Album";
+import '../style.css'
 
 const Albums = () => {
 
@@ -11,7 +12,7 @@ const Albums = () => {
         Service.getAlbums().then(value => setalbums(value.data))
     },[])
     return (
-        <div>
+        <div className={'albums'}>
             {
                 albums.map(album=><Album key={album.id} album={album}/>)
             }

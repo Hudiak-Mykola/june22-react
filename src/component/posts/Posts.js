@@ -1,7 +1,9 @@
 import {useEffect, useState} from "react";
-import {Service} from "../../services";
 import {useParams} from "react-router-dom";
+
+import {Service} from "../../services";
 import Post from "../post/Post";
+import '../style.css'
 
 
 const Posts = () => {
@@ -12,8 +14,8 @@ const Posts = () => {
         Service.getPostById(id).then(({data}) => setPost(data))
     }, [id])
     return (
-        <div>
-            {post && <Post post={post}/>}
+        <div className={'posts'}>
+            {<Post post={post}/>}
         </div>
     );
 };

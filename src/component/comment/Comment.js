@@ -1,15 +1,15 @@
-import {Link, Outlet} from "react-router-dom";
+import {Link} from "react-router-dom";
 
+import '../style.css'
 
 const Comment = ({comment}) => {
 
-    const {id} = comment
+    const {postId} = comment
 
     return (
         <div>
-            <div>
-                <Link to={`posts/${id}`}>{comment.id}  -  {comment.body}</Link>
-
+            <div className={'comment'}>
+                <Link to={`posts/${postId}`}  >{comment.id}  -  {comment.body} </Link>
             </div>
         </div>
     );

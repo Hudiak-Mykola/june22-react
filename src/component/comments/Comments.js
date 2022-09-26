@@ -16,7 +16,7 @@ const Comments = () => {
 
         <div>
             <Outlet/>
-            <div>
+            <div className={'comments'}>
                 {
                     comment.map(comment => <Comment key={comment.id} comment={comment}/>)
                 }

@@ -1,8 +1,8 @@
-
+import '../style.css'
 
 const Album = ({album}) => {
     return (
-        <div>
+        <div className={'album'}>
             {album.id}  -  {album.title}
         </div>
     );

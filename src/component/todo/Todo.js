@@ -1,8 +1,8 @@
 
-
+import '../style.css'
 const Todo = ({todo}) => {
     return (
-        <div>
+        <div className={'todo'}>
             {todo.id} -  {todo.title}
         </div>
     );

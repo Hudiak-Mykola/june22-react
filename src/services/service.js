@@ -1,6 +1,8 @@
 import {axiosServices} from "./axios.services";
+
 import {urls} from "../config";
-import post from "../component/post/Post";
+
+
 
 const Service = {
     getTodos: () => axiosServices.get(urls.todos),

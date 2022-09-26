@@ -1,6 +1,7 @@
 import {Link, Route, Routes} from "react-router-dom";
 
-import Home from "./Home";
+import './App.css'
+import Home from "./component/home/Home";
 import Comments from "./component/comments/Comments";
 import Todos from "./component/todos/Todos";
 import Albums from "./component/albums/Albums";
@@ -11,14 +12,14 @@ import Post from "./component/post/Post";
 function App() {
     return (
         <div>
-            <div>
-                <h2>Menu</h2>
-                <ul>
-                    <li><Link to={'/'}>Home</Link></li>
-                    <li><Link to={'/todos'}>Todos</Link></li>
-                    <li><Link to={'/albums'}>Albums</Link></li>
-                    <li><Link to={'/comments'}>Comments</Link></li>
-                </ul>
+            <div className={'app'}>
+
+
+                    <button><Link to={'/'}>Home</Link></button>
+                    <button><Link to={'/todos'}>Todos</Link></button>
+                    <button><Link to={'/albums'}>Albums</Link></button>
+                    <button><Link to={'/comments'}>Comments</Link></button>
+
             </div>
             <div>
                 <Routes>
