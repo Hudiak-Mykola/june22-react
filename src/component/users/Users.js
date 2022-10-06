@@ -1,17 +1,26 @@
-import {useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
 
-import {Service} from "../../services/service";
-
+import User from "../user/User";
+import {UsersService} from "../../services";
 
 
 const Users = () => {
-    const [users, setUsers] = useState([]);
-    useEffect(()=>{
-        Service.getUsers().
-    },[])
+
+    let  state = useSelector(state => state.userReducer.users)
+
+    let dispatch = useDispatch();
+
+    useEffect(() => {
+        UsersService.getAll().then(value => {
+            dispatch({type: 'load_users', payload: value.data})
+        })
+    }, [])
     return (
         <div>
-
+            {
+                state.map(user=><User key = {user.id} user={user}/>)
+            }
         </div>
     );
 };
