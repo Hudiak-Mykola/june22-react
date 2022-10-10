@@ -1,0 +1,13 @@
+.Header{
+    display: flex;
+
+    background: sandybrown;
+    height: 40px;
+}
+.Navigation{
+    display: flex;
+    justify-content: space-around;
+}
+button{
+    width: 100px;
+}
