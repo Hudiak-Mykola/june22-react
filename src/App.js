@@ -1,8 +1,9 @@
+import {Route, Routes} from "react-router-dom";
+
 import './App.css';
 import Header from "./components/header/Header";
 import Users from "./components/users/Users";
 import Posts from "./components/posts/Posts";
-import {Link, Route, Routes} from "react-router-dom";
 
 function App() {
     return (
