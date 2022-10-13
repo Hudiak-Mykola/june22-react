@@ -5,7 +5,7 @@ import {carService} from "../../services";
 const initialState = {
     cars: [],
     errors: null,
-    cerForUpdate: null,
+    carForUpdate: null,
     loading: false
 }
 
@@ -63,7 +63,7 @@ const carSlice = createSlice({
     initialState,
     reducers: {
         setCarForUpdate: (state, action) => {
-            state.setCarForUpdate = action.payload;
+            state.carForUpdate = action.payload;
         }
     },
     extraReducers: builder => builder
@@ -80,8 +80,20 @@ const carSlice = createSlice({
         })
         .addCase(deleteCar.fulfilled, (state, action) => {
             const carIndex = state.cars.findIndex(value => value.id === action.payload)
-            state.cars.splice(carIndex,1)
+            state.cars.splice(carIndex, 1)
         })
+        .addCase(updateById.fulfilled, (state, action) => {
+            const findCar = state.cars.find(value => value.id === action.payload.id);
+            Object.assign(findCar, action.payload)
+            state.carForUpdate = null
+        })
+        .addDefaultCase((state, action) => {
+            const [pathElement] = action.type.split('/').splice(-1)
+            if (pathElement === 'rejected'){
+                state.errors = action.payload;
+                state.loading = false;
+            }
+                })
 })
 
 const {reducer: carReducer, actions: {setCarForUpdate}} = carSlice;
